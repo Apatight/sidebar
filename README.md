@@ -1,13 +1,13 @@
-# Apateez Sidebar
+# Apatight Sidebar
 
 > A clone of Zagat's restaurant page sidebar.
 
 ## Related Projects
 
-  - https://github.com/apateez/reviews
-  - https://github.com/apateez/nearby
-  - https://github.com/apateez/proxy-Pooja
-  - https://github.com/apateez/gallery
+  - https://github.com/apatight/reviews
+  - https://github.com/apatight/nearby
+  - https://github.com/apatight/proxy-Jessica
+  - https://github.com/apatight/gallery
 
 ## Table of Contents
 
@@ -37,7 +37,6 @@ npm run build
 - Babel CLI
 - MongoDB
 - Mongoose
-
 
 ## Development
 

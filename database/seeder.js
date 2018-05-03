@@ -52,16 +52,9 @@ getFullData = (places) => {
       }
     });
 
-
   };
 
   seedData();
-
-     // })
-        // .catch(err => console.log(err));
-
-    // .then(() => mongoose.connection.close())
-    // .catch(err => console.log(err));
 };
 
 getFullData(initData);

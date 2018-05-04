@@ -2,6 +2,7 @@
 const initData = require('./195-Zagat-AllData.json');
 // const rp = require('request-promise')
 // const fs = require('fs');
+const faker = require('faker');
 const Places = require('./index.js');
 const Promise = require('bluebird');
 const mongoose = require('mongoose');
@@ -60,3 +61,29 @@ getFullData = (places) => {
 getFullData(initData);
 
 module.exports = getFullData;
+
+////////////////////////////////////////
+
+// const faker = require('faker');
+// const Places = require('./index.js');
+// const Promise = require('bluebird');
+// const mongoose = require('mongoose');
+// const mongodb = require('./index.js');
+// const path = require('path');
+// const data = require('./zagatData.json');
+// const fs = require('fs');
+
+// const insertData = () => {
+//   fs.readFile(path.join(__dirName, 'zagatData.json' (err, data) => {
+//     if (err) {
+//       console.log ('readFile error:', err)
+//     }
+//     else {
+//       const inputData = JSON.parse(data);
+//       console.log('This is the data:', inputData)
+//       mongodb.Places.create(inputData);
+//     }
+//   });
+// };
+
+// insertData(data);

@@ -4,7 +4,7 @@ const faker = require('faker');
 const results = [];
 faker.locale = 'en_US';
 
-for (let i = 0; i < 10000; i += 1) {
+for (let i = 0; i < 100000; i += 1) {
   faker.seed(i);
 
   const place = {};

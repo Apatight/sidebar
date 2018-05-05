@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const mongoUrlDocker = 'mongodb://database/apateez-sidebar';
-const mongoUrl = 'mongodb://localhost/apateez-sidebar';
+// const mongoUrlDocker = 'mongodb://database/apateez-sidebar';
+const mongoUrl = 'mongodb://localhost/apatight-sidebar';
 
 mongoose.connect(mongoUrl);
 
@@ -10,10 +10,10 @@ mongoose.connection.on('connected', function() {
   
 mongoose.connection.on('error',function (err) {
   console.log('Mongoose default connection error: ' + err);
-mongoose.connect(mongoUrlDocker)
+mongoose.connect(mongoUrl)
 });
 
-const db = mongoose.connection;
+let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {} ); // connected
 
@@ -41,5 +41,6 @@ const clearDb = (cb) => {
   Places.remove({}, cb)
 }
 
-module.exports = Places;
+module.exports.Places = Places;
+module.exports.db = db;
 exports.clearDb = clearDb;

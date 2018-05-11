@@ -6,5 +6,6 @@ client/bundle.js
 ZagatData60.json
 zagatData.json
 
-## Test coverage ##
-coverage
+## Test coverage-related files ##
+/coverage/
+/coverage.data

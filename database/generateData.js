@@ -48,21 +48,16 @@ const generate = (writer, encoding, callback) => {
     do {
       x -= 1;
       let stringified = JSON.stringify(createSidebars(x));
-      if (x === total - 1) {
-        stringified = `[${stringified}`;
-      }
-      if (x !== 0) {
-        stringified += ',';
-      }
-      if (x === 0) {
-        stringified += ']';
-        writer.write(stringified, encoding, callback);
-      } else {
-        written = writer.write(stringified, encoding);
-      }
-    } while (x > 0 && written);
+      stringified += '\n'; 
+      written = writer.write(stringified, encoding);
+    }
+    while (x > 0 && written);
     if (x > 0) {
       writer.once('drain', write);
+    }
+    else {
+      //if (x === 0) do this
+        callback;
     }
   }
   write();

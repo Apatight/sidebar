@@ -7,15 +7,9 @@ const total = 10000000;
 
 const createSidebars = (i) => {
 	if (i === 1) {
-    // This is gonna really slow you down, reconsider.
-    // maybe only print it out at milestones.
-    // <3 Steve
 		console.log('record 1 created');
 	};
   if (i === 5000000) {
-    // This is gonna really slow you down, reconsider.
-    // maybe only print it out at milestones.
-    // <3 Steve
     console.log('record 5m created');
   };
   const place = {};

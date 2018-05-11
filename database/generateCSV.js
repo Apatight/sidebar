@@ -1,7 +1,6 @@
 const fs = require('fs');
 const faker = require('faker');
 
-const place = {};
 faker.locale = 'en_US';
 //count down from 10m
 const total = 10000000;
@@ -13,14 +12,14 @@ const createSidebars = (i) => {
  //    // <3 Steve
 	// 	console.log('record', i, 'created');
 	// };
-  place.id = i;
-  place.name = faker.commerce.productName();
-  place.menu_url = 'http://google.com';
-  place.address = `${faker.address.streetAddress()}, San Francisco, CA ${faker.address.zipCode()}, USA`;
-  place.location = `https://maps.google.com/?cid=${i.toString()}`;
-  place.url = `www.${place.name.split(' ')[0].replace(/(^,)|(,$)/g, '')}.com`;
-  place.phone = faker.phone.phoneNumberFormat(1);
-  place.hours = [
+  const id = i;
+  const name = faker.commerce.productName();
+  const menu_url = 'http://google.com';
+  const address = `${faker.address.streetAddress()}, San Francisco, CA ${faker.address.zipCode()}, USA`;
+  const location = `https://maps.google.com/?cid=${i.toString()}`;
+  const url = `www.${place.name.split(' ')[0].replace(/(^,)|(,$)/g, '')}.com`;
+  const phone = faker.phone.phoneNumberFormat(1);
+  const hours = [
     'Monday: 11:30 AM – 2:30 PM 5:30 – 9:30 PM',
     'Tuesday: 11:30 AM – 2:30 PM 5:30 – 9:30 PM',
     'Wednesday: 11:30 AM – 2:30 PM 5:30 – 9:30 PM',
@@ -29,10 +28,10 @@ const createSidebars = (i) => {
     'Saturday: 11:30 AM – 9:30 PM',
     'Sunday: 11:30 AM – 9:30 PM',
   ];
-  place.coords = { lat: null, lng: null };
-  place.coords.lat = faker.address.latitude();
-  place.coords.lng = faker.address.longitude();
-  return place;
+  const coords = { lat: null, lng: null };
+  const coords.lat = faker.address.latitude();
+  const coords.lng = faker.address.longitude();
+  const place = []
 };
 
 const generate = (writer, encoding, callback) => {
@@ -65,6 +64,3 @@ const generate = (writer, encoding, callback) => {
 generate(fs.createWriteStream('./zagatData.json', 'utf8', () => {
   console.log('WriteStream 10million completed!');
 }));
-
-module.exports.generate = generate;
-module.exports.createSidebars = createSidebars;

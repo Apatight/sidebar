@@ -7,5 +7,4 @@ ZagatData60.json
 zagatData.json
 
 ## Test coverage-related files ##
-/coverage/
-/coverage.data
+coverage/

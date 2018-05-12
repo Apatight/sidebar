@@ -1,6 +1,0 @@
-don't use arrays bc postgres don't like that
-make it a csv
-you wanna make it relational data
-
-sudo mongod/
-don't journal in mongo: --no-journal for mongo seeding 

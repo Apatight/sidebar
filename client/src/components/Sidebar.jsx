@@ -38,7 +38,7 @@ export default class Sidebar extends React.Component {
   };
 
   render() {
-    const { hours, address, phone, website, location, id, name, url, menu_url, coords } = this.state.place;
+    const { hours, address, phone, website, location, id, name, url, menu_url, lat, lng } = this.state.place;
     if (!this.state.isLoaded) {
       return <div>Loading...</div>
     }
@@ -56,8 +56,8 @@ export default class Sidebar extends React.Component {
                 address={address} 
                 phone={phone}
                 website={url}
-                lat={coords.lat}
-                lng={coords.lng}
+                lat={lat}
+                lng={lng}
                 id={id}
                 name={name}
               />

@@ -5,17 +5,28 @@ faker.locale = 'en_US';
 //count down from 10m
 const total = 10000000;
 
+/*
+
+TO GENERATE THE DATA:
+node generateData.js | gnomon
+
+TO SEED DATA IN MONGO:
+
+time mongoimport --db apatight-sidebar --collection places --file zagatData.json --numInsertionWorkers 2 | gnomon
+
+TO SEED DATA IN POSTGRESQL from within pg-apatight:
+
+\copy sidebar ('id', 'name', 'menu_url', 'address', 'location', 'url', 'phone', 'hours', 'coords')
+FROM '/Users/jessicarahman/Desktop/sidebar/database/zagatData.csv'
+DELIMITER ',' CSV HEADER;
+
+*/
+
 const createSidebars = (i) => {
 	if (i === 1) {
-    // This is gonna really slow you down, reconsider.
-    // maybe only print it out at milestones.
-    // <3 Steve
 		console.log('record 1 created');
 	};
   if (i === 5000000) {
-    // This is gonna really slow you down, reconsider.
-    // maybe only print it out at milestones.
-    // <3 Steve
     console.log('record 5m created');
   };
   const place = {};
@@ -35,9 +46,8 @@ const createSidebars = (i) => {
     'Saturday: 11:30 AM – 9:30 PM',
     'Sunday: 11:30 AM – 9:30 PM',
   ];
-  place.coords = { lat: null, lng: null };
-  place.coords.lat = faker.address.latitude();
-  place.coords.lng = faker.address.longitude();
+  place.lat = faker.address.latitude();
+  place.lng = faker.address.longitude();
   return place;
 };
 

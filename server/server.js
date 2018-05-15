@@ -5,7 +5,7 @@ const app = express();
 
 const port = process.env.PORT || 3001;
 const bodyParser = require('body-parser');
-const Places = require('../database/index.js')
+const db = require('../database/index.js');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,17 +19,32 @@ app.use(function(req, res, next) {
 app.use('/restaurants', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/restaurants/:id', function(req, res) {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'))
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 })
 
 app.get('/api/restaurants/:id', function(req, res) {
-  let q = Places.findOne({id: req.params.id});
-
-  q.exec((err, place) => {
-    if (err) { console.log(err) }
-    console.log('PLACE: ', place)
-    res.send(place);
+  let id = req.params.id;
+  console.log('id is', typeof id);
+  db.findOne(id)
+  .then((data) => {
+    console.log(data);
+    res.send(data);
+  })
+  .catch((err) => {
+    console.log('ERROR: ', err);
   });
+  // places.findOne({"id": id}, (err, person) => {
+  //   console.log(err, person);
+  //   res.send(person);
+  // });
+  // let q = places.findOne({"id": id});
+  // console.log('Get request for restaurant id sent');
+  // q.select('*');
+  // q.exec((err, place) => {
+  //   if (err) { console.log(err) }
+  //   console.log('PLACE: ', place)
+  //   res.send(place);
+  // });
 });
 
 app.listen(port, () => {

@@ -94,7 +94,7 @@ input[type='checkbox'] {
   margin-top: 10px;
   display: block;
   text-align: left;
-  padding: 1rem;
+  padding: 1rem 3rem 1rem 1rem;
   color: #101820;
   background: white;
   cursor: pointer;
@@ -115,6 +115,7 @@ input[type='checkbox'] {
 
   vertical-align: middle;
   margin-right: .7rem;
+  padding-left: 10px;
   transform: translateY(-2px);
 
   transition: transform .2s ease-out;
@@ -129,6 +130,7 @@ input[type='checkbox'] {
   border-left: 2px solid transparent !important;
   border-right: 2px solid #92002c !important;
   border-bottom: 2px solid #92002c !important;
+  padding-left: 20px;
 }
 
 .collapsible-content .content-inner {
@@ -147,7 +149,8 @@ input[type='checkbox'] {
   margin-left: 1em;
 }
 .lbl-toggle {
-  width: 80%;
+  width: 60%;
+  margin-left: 15px;
 }
 .toggle:checked + .lbl-toggle + .collapsible-content {
   max-height: 350px;
@@ -221,8 +224,6 @@ input[type='checkbox'] {
 .contactText:hover {
   color: #92002c;
 }
-
-
 
 .contactIcon {
   float: left;

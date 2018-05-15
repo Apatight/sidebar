@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const newrelic = require('newrelic');
 // const mongoUrlDocker = 'mongodb://database/apateez-sidebar';
 const mongoUrl = 'mongodb://localhost/apatight-sidebar';
 
@@ -19,20 +20,18 @@ db.once('open', () => {} ); // connected
 
 const placesSchema = mongoose.Schema({
   id: {
-      type: String,
-      unique: true
-    },
-    name: String,
-    menu_url: String,
-    address: String,
-    location: String,
-    url: String,
-    phone: String,
-    hours: [],
-    coords: {
-      lat: String,
-      lng: String
-    }
+    type: Number,
+    unique: true
+  },
+  name: String,
+  menu_url: String,
+  address: String,
+  location: String,
+  url: String,
+  phone: String,
+  hours: [],
+  lat: String,
+  lng: String
   });
 
 const Places = mongoose.model('Places', placesSchema);
@@ -41,6 +40,19 @@ const clearDb = (cb) => {
   Places.remove({}, cb)
 }
 
-module.exports.Places = Places;
-module.exports.db = db;
-exports.clearDb = clearDb;
+// const findOne = (id, cb) => {
+//   Places.findOne( {id: id}), 'id', (err, place) => {
+//     if (err) console.log(err);
+//     else cb(place);
+//   }
+// }
+const findOne = id => Places.findOne({"id": id});
+
+
+// module.exports.places = Places;
+// module.exports.db = db;
+// module.exports.findOne = findOne;
+// exports.clearDb = clearDb;
+module.exports = {
+  findOne
+};

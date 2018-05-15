@@ -7,7 +7,7 @@
     "test": "jest generateData.test.js --coverage",
     "build": "webpack -d --watch",
     "build:prod": "webpack -p",
-    "start": "node ./server/server.js",
+    "start": "require('newrelic'); node ./server/server.js",
     "generate": "node ./database/generateData.js",
     "seedmongo": "time mongoimport --db apatight-nearby --collection places --file .database/zagatData.json --numInsertionWorkers 2",
     "docker": "npm run build:prod && npm run seed & npm run start"
@@ -16,6 +16,7 @@
   "author": "pooja-kodavanti",
   "license": "ISC",
   "dependencies": {
+    "artillery": "^1.6.0-15",
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -31,6 +32,7 @@
     "moment": "^2.22.1",
     "mongoose": "^5.0.14",
     "morgan": "^1.9.0",
+    "newrelic": "^4.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-bootstrap": "^0.32.1",

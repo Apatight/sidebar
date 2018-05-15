@@ -10,11 +10,7 @@ const {expect} = require('chai');
 // var {expect} = chai
 
 test('creates an object with all the correct fields', () => {
-  expect(data.createSidebars(0)).to.have.all.keys('id', 'name', 'menu_url', 'address', 'location', 'url', 'phone', 'hours', 'coords');
-});
-
-test('creates an object with the correct fields that are data structures', () => {
-  expect(data.createSidebars(0).coords).to.have.all.keys('lat', 'lng');
+  expect(data.createSidebars(0)).to.have.all.keys('id', 'name', 'menu_url', 'address', 'location', 'url', 'phone', 'hours', 'lat', 'lng');
 });
 
 //Come back to this later

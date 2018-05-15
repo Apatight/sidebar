@@ -3,8 +3,14 @@ node_modules/
 
 ## Compiled Files ##
 client/bundle.js
+
+## Data ##
+database/zagatData.json
 ZagatData60.json
 zagatData.json
+
+## New Relic ##
+newrelic.js
 
 ## Test coverage-related files ##
 coverage/

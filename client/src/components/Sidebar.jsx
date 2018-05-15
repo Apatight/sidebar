@@ -27,8 +27,10 @@ export default class Sidebar extends React.Component {
   getPlace() {
     let context = this;
     let id = window.location.href.split('/')[4];
-    axios.get(`${BASE_URL}/api/restaurants/${id}`)
+    // axios.get(`${BASE_URL}/api/restaurants/${id}`)
+    axios.get(`http://localhost:3001/api/restaurants/${id}`)
     .then((res) => {
+      console.log('RESPONSE: ', res)
       this.setState({
         place: res.data,
         isLoaded: true

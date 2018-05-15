@@ -11,11 +11,11 @@ TO GENERATE THE DATA:
 node generateData.js | gnomon
 
 TO SEED DATA IN MONGO:
-open Postico
 
-mongoimport --db apatight-sidebar --collection Places --file zagatData.json --numInsertionWorkers 2 | gnomon
+time mongoimport --db apatight-sidebar --collection places --file zagatData.json --numInsertionWorkers 2 | gnomon
 
 TO SEED DATA IN POSTGRESQL from within pg-apatight:
+
 \copy sidebar ('id', 'name', 'menu_url', 'address', 'location', 'url', 'phone', 'hours', 'coords')
 FROM '/Users/jessicarahman/Desktop/sidebar/database/zagatData.csv'
 DELIMITER ',' CSV HEADER;

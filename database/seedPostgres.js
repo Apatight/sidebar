@@ -16,6 +16,6 @@ CREATE TABLE places IF NOT EXISTS (
   PRIMARY KEY ("id")
 );
 
-COPY sidebar ('id', 'name', 'menu_url', 'address', 'location', 'url', 'phone', 'hours', 'coords')
+COPY sidebar ('id', 'name', 'menu_url', 'address', 'location', 'url', 'phone', 'hours', 'lat', 'lng')
 FROM '/Users/jessicarahman/Desktop/sidebar/database/zagatData.csv'
 DELIMITER ',' CSV HEADER;

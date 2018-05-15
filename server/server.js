@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
@@ -24,7 +23,6 @@ app.get('/restaurants/:id', function(req, res) {
 
 app.get('/api/restaurants/:id', function(req, res) {
   let id = req.params.id;
-  console.log('id is', typeof id);
   db.findOne(id)
   .then((data) => {
     console.log(data);
@@ -33,18 +31,6 @@ app.get('/api/restaurants/:id', function(req, res) {
   .catch((err) => {
     console.log('ERROR: ', err);
   });
-  // places.findOne({"id": id}, (err, person) => {
-  //   console.log(err, person);
-  //   res.send(person);
-  // });
-  // let q = places.findOne({"id": id});
-  // console.log('Get request for restaurant id sent');
-  // q.select('*');
-  // q.exec((err, place) => {
-  //   if (err) { console.log(err) }
-  //   console.log('PLACE: ', place)
-  //   res.send(place);
-  // });
 });
 
 app.listen(port, () => {

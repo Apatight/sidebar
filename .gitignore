@@ -11,6 +11,7 @@ zagatData.json
 
 ## New Relic ##
 newrelic.js
+server/newrelic_agent.log
 
 ## Test coverage-related files ##
 coverage/

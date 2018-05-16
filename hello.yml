@@ -1,0 +1,14 @@
+config:
+  target: 'http://localhost:3001'
+  phases:
+    - duration: 30
+      arrivalRate: 100
+      name: "sustained load to 100rps"
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - name: "Get a restaurant" 
+    flow:
+    - get:
+        url: "/api/restaurants/1"

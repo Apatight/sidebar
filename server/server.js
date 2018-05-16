@@ -1,3 +1,5 @@
+require('newrelic');
+
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -17,15 +19,14 @@ app.use(function(req, res, next) {
 
 app.use('/restaurants', express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/restaurants/:id', function(req, res) {
+app.get('/restaurants/:id', function getFile (req, res) {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 })
 
-app.get('/api/restaurants/:id', function(req, res) {
+app.get('/api/restaurants/:id', function getRestaurant (req, res) {
   let id = req.params.id;
   db.findOne(id)
   .then((data) => {
-    console.log(data);
     res.send(data);
   })
   .catch((err) => {

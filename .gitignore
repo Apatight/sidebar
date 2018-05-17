@@ -15,3 +15,6 @@ server/newrelic_agent.log
 
 ## Test coverage-related files ##
 coverage/
+
+## Ignore redis binary dump ##
+dump.rdb

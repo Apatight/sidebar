@@ -1,9 +1,9 @@
 config:
   target: 'http://localhost:3001'
   phases:
-    - duration: 40
-      arrivalRate: 500
-      name: "sustained 40s duration of 500rps"
+    - duration: 30
+      arrivalRate: 600
+      name: "sustained 30s duration of 600rps"
   defaults:
     headers:
       x-my-service-auth: '987401838271002188298567'

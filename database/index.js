@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const newrelic = require('newrelic');
+// const newrelic = require('newrelic');
 // const mongoUrlDocker = 'mongodb://database/apateez-sidebar';
 const mongoUrl = 'mongodb://localhost/apatight-sidebar';
 

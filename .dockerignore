@@ -1,2 +1,10 @@
 node_modules
 npm-debug.log
+database/zagatData.json
+database/zagatData10k.json
+database/generateData.js
+database/generateCSV.js
+database/195-Zagat-AllData.json
+tests
+client/dist/bundle.js
+.circleci
